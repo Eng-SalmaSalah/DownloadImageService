@@ -13,7 +13,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
-        <activity android:name=".ImageActivity"></activity>
+        <activity android:name=".ImageActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="image/*" />
+            </intent-filter>
+        </activity>
 
         <receiver
             android:name=".MyReceiver"
@@ -24,6 +30,9 @@
             <intent-filter>
                 <action android:name="imageDownloaded" />
             </intent-filter>
+
+
+
         </receiver>
 
 
